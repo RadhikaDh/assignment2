@@ -54,9 +54,19 @@ defmodule Ex03 do
   be used if needed.)
 
   """
-
-  def odd_even . . . "your code"
-
+  
+  def odd_even(list) do
+	for x<-list do
+		x= if Integer.is_even(x) do
+		:even
+		else
+		:odd
+		end
+	end
+  end  
+	
+	
+  
 
   ##############################################################################
   # 3.2:  5 points #
@@ -77,7 +87,11 @@ defmodule Ex03 do
 
   """
 
-  def list_contains . .. "your code"
+  def list_contains(list, number) do 
+	Enum.member?(list, number)  
+  end
+  
+
 
   ##############################################################################
   # 3.3:  5 points #
@@ -101,7 +115,10 @@ defmodule Ex03 do
 
   """
 
-  def list_equal . . . "your code"
+  def list_equal(list1, list2) do
+		list1==list2
+		
+  end
 
 
 
@@ -149,7 +166,31 @@ defmodule Ex03 do
   Think a little about a nice way to lay this code out.
   """
 
-  def won . . . "your code"
+  def won(tup)do
+	list = Tuple.to_list(tup)
+	list1 = Tuple.to_list(tup)
+	list2 = Tuple.to_list(tup)
+	case list do
+		[a, _, _, _, a, _, _, _, a] ->
+			a
+		[b, _, _, b, _, _, b,_, _] ->
+			b
+		[_, c, _, _, c, _, _, c, _] ->
+			c
+		[_, _, d,_, _, d,_, _, d] ->
+			d
+		[e, e, e,_, _, _,_, _, _] ->
+			e
+		[_, _, _,f, f, f,_, _, _] ->
+			f
+		[_, _, _,_, _, _,g, g, g] ->
+			g
+		[_, _, h,_, h, _,h, _, _] ->
+			h
+		_ ->
+			false
+	end
+  end
 
 
   ###########################
